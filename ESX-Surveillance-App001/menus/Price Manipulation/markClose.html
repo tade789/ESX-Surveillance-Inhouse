@@ -1,0 +1,32 @@
+<div class="section-title">Mark the Close</div>
+
+<div class="description-box">
+  <p>
+    📘 <strong>What is Mark the Close?</strong><br>
+    Placing trades just before market close at aggressive prices to influence the closing price.
+  </p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li> 👉 Trades in last 5 minutes of session</li>
+    <li> 👉 Price difference from day average &gt; 5%</li>
+  </ul>
+  <p>
+    Detects suspicious trades placed in the <strong>last 5 minutes before market close</strong>
+    at aggressive prices that deviate more than <strong>5% from the day’s average price</strong>.
+  </p>
+</div>
+
+
+<!-- Filters -->
+<div class="filter-box" style="margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.1); border-radius:6px;">
+  <label>Close Window (minutes): 
+    <input type="number" id="mc-window" value="5" min="1" style="width:80px;">
+  </label>
+  <label style="margin-left:12px;">Price % Threshold:
+    <input type="number" id="mc-threshold" value="5" min="1" style="width:80px;"> %
+  </label>
+  <button id="mc-apply" style="margin-left:12px;">Apply</button>
+</div>
+
+<div id="mark-close-report" class="report-box large-box">
+  <p>Upload data in <em>Home</em> to run this report.</p>
+</div>

@@ -1,0 +1,42 @@
+<div class="section-title">Layering</div>
+
+<div class="description-box">
+  <p>
+    📘 <strong>What is Layering?</strong><br>
+    Layering involves placing fake orders at multiple price levels to mislead the market, then cancelling them before execution to manipulate price.
+  </p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li>👉 ≥ 5 orders placed on the same side (buy or sell)</li>
+    <li>👉 Orders spread across ≥ 3 distinct price levels</li>
+    <li>👉 ≥ 80% of those orders canceled within 5 minutes</li>
+    <li>👉 No intention to trade</li>
+  </ul>
+  <p>
+     <strong>Detection:</strong><br>
+    Multiple fake orders placed and canceled quickly, followed by real trades on the opposite side.
+  </p>
+</div>
+
+
+<div class="filter-box" style="margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.1); border-radius:6px;">
+  <label>Min Orders(same side):
+    <input type="number" id="layer-min-orders" value="5" min="3" style="width:60px;">
+  </label>
+  <label style="margin-left:12px;">Min Price Levels:
+    <input type="number" id="layer-min-levels" value="3" min="2" style="width:60px;">
+  </label>
+  <label style="margin-left:12px;">Cancel Ratio(%):
+    <input type="number" id="layer-cancel-ratio" value="80" min="50" style="width:70px;">
+  </label>
+  <label style="margin-left:12px;">Max Order Duration(sec):
+    <input type="number" id="layer-max-duration" value="45" min="5" style="width:80px;">
+  </label>
+  <label style="margin-left:12px;">FollowUp Trade Window(min):
+    <input type="number" id="layer-trade-window" value="7" min="1" style="width:60px;">
+  </label>
+  <button id="layer-apply" style="margin-left:12px;">Apply</button>
+</div>
+
+<div id="layering-report" class="report-box large-box">
+  <p>Upload data in <em>Home</em> to run this report.</p>
+</div>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESX Surveillance App</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- External Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+
+  <!-- App Bootstrap -->
+  <script type="module" src="core/script.js"></script>
+</head>
+<body>
+  
+  <!-- LOGIN PAGE -->
+  <div id="login-page" class="page active">
+    <div class="login-form-container">
+      <div class="logo-login">
+        <img src="assets/images/tade2.jpg" alt="ESX Logo" style="width: 300px;"/>
+      </div>
+      <h2>Welcome to ESX Market Surveillance Tool (In-House)</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required />
+        <div style="position: relative; display: inline-block; width: 100%;">
+          <input type="password" id="password" placeholder="Password" required style="padding-right: 30px; width: 100%;" />
+          <span id="toggle-password"
+                style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); cursor: pointer; user-select:none;">
+            👁️
+          </span>
+        </div>
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- DASHBOARD PAGE -->
+  <div id="dashboard-page" class="page">
+    <!-- HEADER -->
+    <header class="topbar">
+      <div class="brand">
+        <!-- <div class="logo">ESX</div> -->
+         <div><img src="assets\images\logo.png" alt="logo" width="195px" height="32px"></div>
+      </div>
+      <div class="right-tools">
+        <div class="welcome">Welcome <strong>XXXX</strong></div>
+        <button class="chip" type="button" id="logout-btn">⏻ Logout</button>
+      </div>
+    </header>
+
+    <div class="hairline"></div>
+
+    <!-- NAVIGATION -->
+    <div class="top-menu-container">
+      <nav class="top-menu">
+        <div class="menu-item active" data-section="home">🏠 Home</div>
+
+        <div class="dropdown">
+          <button class="dropbtn">Insider Trading & Misuse</button>
+          <div class="dropdown-content">
+            <div data-section="insider-trading">Insider Trading</div>
+            <div data-section="front-running">Front Running</div>
+            <div data-section="dormancy">Unusual Trade After Dormancy</div>
+            <div data-section="publication">Publication Sensitive</div>
+          </div>
+        </div>
+
+         <div class="dropdown">
+          <button class="dropbtn">Price Manipulation</button>
+          <div class="dropdown-content">
+            <div data-section="mark-open">Mark The Open</div>
+            <div data-section="mark-close">Mark The Close</div>
+            <div data-section="pump-dump">Pump and Dump</div>
+            <div data-section="cornering">Cornering</div>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">Order Book Manipulation</button>
+          <div class="dropdown-content">
+            <div data-section="spoofing">Spoofing</div>
+            <div data-section="layering">Layering</div>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">Trade-based Manipulation</button>
+          <div class="dropdown-content">
+            <div data-section="wash-trading">Wash Trading</div>
+            <div data-section="churning">Churning</div>
+            <div data-section="circular-trading">Circular Trading</div>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">Volume & Liquidity</button>
+          <div class="dropdown-content">
+            <div data-section="abnormal-volume">Abnormal Trading Volume</div>
+            <div data-section="illiquid-trading">Trading in Illiquid Securities</div>
+            <div data-section="trade-to-order">Trade-to-Order Ratio (T/O Ratio)</div>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">Settings</button>
+          <div class="dropdown-content">
+            <div data-section="about">About</div>
+            <div data-section="change-password">Change Password</div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- Sections will be dynamically injected -->
+      <section id="home" class="content-section active"></section>
+      <section id="insider-trading" class="content-section"></section>
+      <section id="front-running" class="content-section"></section>
+      <section id="dormancy" class="content-section"></section>
+      <section id="publication" class="content-section"></section>
+      <section id="mark-open" class="content-section"></section>
+      <section id="mark-close" class="content-section"></section>
+      <section id="pump-dump" class="content-section"></section>
+      <section id="cornering" class="content-section"></section>
+      <section id="spoofing" class="content-section"></section>
+      <section id="layering" class="content-section"></section>
+      <section id="wash-trading" class="content-section"></section>
+      <section id="churning" class="content-section"></section>
+      <section id="circular-trading" class="content-section"></section>
+      <section id="abnormal-volume" class="content-section"></section>
+      <section id="illiquid-trading" class="content-section"></section>
+      <section id="trade-to-order" class="content-section"></section>
+      <section id="about" class="content-section"></section>
+      <section id="change-password" class="content-section"></section>
+    </main>
+  </div>
+</body>
+</html>

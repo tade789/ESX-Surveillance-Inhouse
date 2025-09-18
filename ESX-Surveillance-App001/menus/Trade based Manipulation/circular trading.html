@@ -1,0 +1,47 @@
+<div class="section-title">Circular Trading</div>
+
+<div class="description-box">
+  <p>
+    📘 <strong>What is Circular Trading?</strong><br>
+    Coordinated pattern of buying and selling of the same security among a group of investors to create artificial volume or misleading price movements.
+  </p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li>👉 Two or more clients trade the same security ≥ 3 times in a day or ≥ 5 times over any 5-day rolling window</li>
+    <li>👉 Buy-sell (or sell-buy) trades within 15 minutes with net position change &lt; 5%</li>
+  </ul>
+  <p>
+     <strong>Detection:</strong><br>
+    Identifies coordinated round-trip trades that artificially inflate volume without changing beneficial ownership.
+  </p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li>👉 Intra-pair matching within <em>Time Window</em> minutes (default 15)</li>
+    <li>👉 Net position change &lt; <em>Net Change %</em> (default 5%)</li>
+    <li>👉 Cycles detected across up to <em>Circle Days</em> (default 1 day)</li>
+    <li>👉 Flag cycles with ≤ <em>Max Entities</em> (default 4) and ≥ <em>Min Volume</em> (default 8000)</li>
+  </ul>
+</div>
+
+
+<div class="filter-box" style="margin-bottom:12px; padding:10px; background:rgba(255,255,255,0.08); border-radius:6px;">
+  <label>From: <input type="date" id="circular-from"></label>
+  <label style="margin-left:10px;">To: <input type="date" id="circular-to"></label>
+  <label style="margin-left:10px;">Circle Days: <input type="number" id="circular-days" value="1" min="1" max="10" style="width:70px;"></label>
+  <label style="margin-left:10px;">Max Entities: <input type="number" id="circular-entities" value="4" min="2" max="10" style="width:70px;"></label>
+  <label style="margin-left:10px;">Min Volume: <input type="number" id="circular-volume" value="8000" min="1" style="width:90px;"></label>
+  <label style="margin-left:10px;">Time Window (min): <input type="number" id="circular-minutes" value="15" min="1" max="120" style="width:80px;"></label>
+  <label style="margin-left:10px;">Net Change %: <input type="number" id="circular-netpct" value="5" min="0" max="100" step="0.1" style="width:70px;"></label>
+  <label style="margin-left:10px;">Severity:
+    <select id="circular-severity">
+      <option value="CRITICAL" selected>CRITICAL</option>
+      <option value="HIGH">HIGH</option>
+      <option value="MEDIUM">MEDIUM</option>
+      <option value="INFO">INFO</option>
+    </select>
+  </label>
+  <button id="circular-apply" style="margin-left:10px;">Apply</button>
+  <button id="circular-reset" style="margin-left:6px;">Reset</button>
+</div>
+
+<div id="circular-trading-report" class="report-box large-box">
+  <p>Upload data in <em>Home</em> to run this report.</p>
+</div>

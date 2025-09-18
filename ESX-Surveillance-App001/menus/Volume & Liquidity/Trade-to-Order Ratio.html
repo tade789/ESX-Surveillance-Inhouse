@@ -1,0 +1,38 @@
+<div class="section-title">Trade-to-Order Ratio (T/O Ratio)</div>
+
+<div class="description-box">
+  <p>
+    📘 <strong>What is Trade-to-Order Ratio?</strong><br>
+    A measure to detect order stuffing, spoofing, or execution inefficiency.
+  </p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li>👉 Low ratio (< 20%) might indicate manipulative intent</li>
+    <li>👉 High ratio (> 80%) shows strong trading intent</li>
+    <li>👉 Medium ratio (20–80%) indicates normal behavior</li>
+  </ul>
+  <p>
+     <strong>Detection / Global Logic:</strong><br>
+    T/O Ratio = (Total Executed Trades ÷ Total Orders) × 100%. Flags unusually low or high ratios that may signal market manipulation or inefficiency.
+  </p>
+</div>
+
+
+<div class="filter-box">
+  <label>From: <input type="date" id="to-from"></label>
+  <label>To: <input type="date" id="to-to"></label>
+
+  <div class="dropdown" style="display:inline-block; margin-left:10px;">
+    <button class="dropbtn">Flag Filter ▼</button>
+    <div class="dropdown-content">
+      <label><input type="checkbox" class="flag-checkbox" value="Low" checked> Low</label>
+      <label><input type="checkbox" class="flag-checkbox" value="Medium" checked> Medium</label>
+      <label><input type="checkbox" class="flag-checkbox" value="High" checked> High</label>
+    </div>
+  </div>
+</div>
+
+<div id="trade-to-order" class="report-box large-box">
+  <div class="results-box">
+    <p>Please upload data in <em>Home</em> to run this report.</p>
+  </div>
+</div>

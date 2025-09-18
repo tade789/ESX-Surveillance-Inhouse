@@ -1,0 +1,35 @@
+<div class="section-title">Spoofing</div>
+
+<div class="description-box">
+  <p>
+    📘 <strong>What is Spoofing?</strong><br>
+    Spoofing is the placement of large, non-intended-to-execute orders to mislead the market about supply or demand, typically followed by cancellations before execution.
+  </p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li>👉 Rapid cancellation within 5–10 minutes</li>
+    <li>👉 Minimum of 2 cancelled orders</li>
+    <li>👉 Order duration ≤ 45 seconds</li>
+  </ul>
+  <p>
+     <strong>Detection:</strong><br>
+    2+ cancelled orders flagged, orders live ≤ 45 seconds before cancellation, and opposite-side trades within 5 minutes confirm intent.
+  </p>
+</div>
+
+
+<div class="filter-box" style="margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.1); border-radius:6px;">
+  <label>Min Cancelled Orders:
+    <input type="number" id="spoof-cancel-min" value="2" min="1" style="width:60px;">
+  </label>
+  <label style="margin-left:12px;">Max Order Duration (sec):
+    <input type="number" id="spoof-duration" value="45" min="5" style="width:80px;">
+  </label>
+  <label style="margin-left:12px;">Follow-up Trade Window (min):
+    <input type="number" id="spoof-trade-window" value="5" min="1" style="width:60px;">
+  </label>
+  <button id="spoof-apply" style="margin-left:12px;">Apply</button>
+</div>
+
+<div id="spoofing-report" class="report-box large-box">
+  <p>Upload data in <em>Home</em> to run this report.</p>
+</div>

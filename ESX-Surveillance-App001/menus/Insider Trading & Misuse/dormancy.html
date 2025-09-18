@@ -1,0 +1,39 @@
+<div class="section-title">Unusual Trade After Dormancy</div>
+
+<div class="description-box">
+  <p>
+    📘 <strong>What is Unusual Trade After Dormancy?</strong><br>
+    A sudden and significant trade initiated by an individual investor in a security 
+    that has shown little or no prior trading activity for an extended period, 
+    occurring without any apparent market news and potentially signaling access 
+    to non-public information or manipulative intent.
+  </p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li>👉 Dormant account for ≥ 3 months or 90 days</li>
+    <li>👉 A client executed a large trade of quantity > 100</li>
+  </ul>
+
+  <p>
+     <strong>Detection Logic:</strong><br>
+    Flags cases where a <strong>client account</strong> has been 
+    dormant (no trades) for at least <strong>90 days</strong>, 
+    then suddenly executes a <strong>large trade (Qty > 100)</strong> 
+    in a security with little/no prior activity.
+  </p>
+</div>
+
+
+<!-- Filters -->
+<div class="filter-box" style="margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.1); border-radius:6px;">
+  <label>Dormancy Days ≥
+    <input type="number" id="dormancy-days" value="90" min="30" style="width:80px;">
+  </label>
+  <label style="margin-left:12px;">Min Trade Qty >
+    <input type="number" id="dormancy-min-qty" value="100" min="1" style="width:80px;">
+  </label>
+  <button id="dormancy-apply" style="margin-left:12px;">Apply</button>
+</div>
+
+<div id="dormancy-report" class="report-box large-box">
+  <p>Upload data in <em>Home</em> to run this report.</p>
+</div>

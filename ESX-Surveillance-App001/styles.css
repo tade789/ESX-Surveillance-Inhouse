@@ -1,0 +1,383 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global reset */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+#login-page.active {
+  display: flex; /* center login form */
+  justify-content: center;
+  align-items: center;
+  background: url("https://img.freepik.com/free-vector/stock-market-exchange-background-with-chart-diagram-investment_1017-44920.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+/* Page toggle */
+.page {
+  display: none;
+  height: 100%;
+  width: 100%;
+
+}
+.page.active {
+  display: block;
+  height: 100vh;
+  
+}
+ /* Chart background */
+  #chart-bg {
+    position: fixed;
+    top:0; left:0; width:100%; height:100%; z-index: -1;
+  }
+/* Login page background */
+.login-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100vh;
+  background: url("https://img.freepik.com/premium-vector/stock-exchange-background_71983-821.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.3); /* optional dark overlay */
+}
+/* Centered login form */
+.login-form-container {
+  z-index: 1;
+  max-width: 350px;
+  margin: 100px auto;
+  padding: 20px;
+  background: rgba(2, 41, 218, 0.849);
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+}
+.logo-login img {
+  width: 200px;
+  margin-bottom: 40px;
+}
+#login-form input, #login-form button {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+}
+#login-form button {
+  background: #1f8d04;
+  color: #002e51;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#login-form button:hover {
+  background: #0088cc;
+}
+
+:root{
+    --header-bg:#efefef;
+    --border:#d7d7d7;
+    --menu-blue:#0b79c9;
+    --menu-blue-dark:#0a6db6;
+    --menu-blue-light:#1f8cde;
+    --tab-sep:#0a6bb0;
+    --tab-hover:#0f8fe6;
+    --text:#33310e;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box}
+
+
+/* Top header */
+.topbar {
+  background: var(--header-bg);
+  padding: 10px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.logo {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  background: #1e90ff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+.brand-text {
+  line-height: 1.1;
+  font-size: 12px;
+}
+.brand-text strong {
+  display: block;
+  font-size: 13px;
+}
+
+.right-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+}
+.welcome {
+  opacity: 0.85;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+.chip:active {
+  transform: translateY(1px);
+}
+
+/* Thin separation line */
+.hairline {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Menu row below top header */
+.top-menu-container {
+  background: linear-gradient(0deg, #2023ec 0%, #0142bb 80%);
+  padding-left:8px;
+  display:flex; align-items:center; gap:0;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}/* Top menu container */
+.top-menu-container {
+  background: linear-gradient(0deg, #2023ec 0%, #0142bb 80%);
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+}
+
+/* Top menu bar */
+.top-menu {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  flex-grow: 1;
+}
+
+/* Apply separators to ALL direct children of .top-menu */
+.top-menu > * {
+
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-left: 1px solid #fff;  /* white separator */
+}
+
+/* Remove line on first item */
+.top-menu > *:first-child {
+  border-left: none;
+}
+
+/* Hover/active state */
+.top-menu > *:hover,
+.top-menu > *.active {
+  background: #06bac0;
+  color: #002e51;
+}
+
+
+/* Remove border from first item */
+.menu-item:first-child {
+  border-left: none;
+}
+
+.menu-item.active,
+.menu-item:hover {
+  background: #06bac0;
+  color: #002e51;
+}
+
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+}
+.dropbtn {
+  background: transparent;
+  border: none;
+  color: #1ab9be;
+  font-size: 1rem;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+.dropdown:hover .dropbtn {
+  background: #00aaff;
+  color: #002e51;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: rgba(143, 194, 191, 0.9);
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(8, 134, 156, 0.5);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 100;
+}
+.dropdown-content div {
+  padding: 10px 15px;
+  color: #06020a;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+.dropdown-content div:hover {
+  background: #00aaff;
+  color: #002e51;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Main content */
+.main-content {
+  padding: 25px 40px;
+  background: url('https://images.unsplash.com/photo-1542223616-0d2e25646d23') no-repeat center fixed;
+  background-size: cover;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  color: #e0e0e0;
+}
+
+/* Section visibility */
+.content-section {
+  display: none;
+  background: rgba(5, 12, 20, 0.6);
+  padding: 20px;
+  border-radius: 8px;
+  max-height: 90vh;
+  overflow-y: auto;
+  color: #ddd;
+}
+.content-section.active {
+  display: block;
+}
+
+/* Wash Trading container */
+.wash-trading-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.wash-trading-description {
+  background-color: #cce4f7;
+  color: #00305a;
+  padding: 15px 20px;
+  border-radius: 8px;
+  flex: 1 1 350px;
+  min-width: 300px;
+  box-shadow: 0 0 8px rgba(0, 48, 90, 0.3);
+}
+.wash-trading-report-box {
+  background-color: #f1f8ff;
+  color: #002755;
+  padding: 15px 20px;
+  border-radius: 8px;
+  flex: 2 1 500px;
+  min-width: 320px;
+  box-shadow: 0 0 8px rgba(0, 39, 84, 0.25);
+  max-height: 450px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: #f0f0f0;
+  color: #002e51;
+}
+
+/* Section title */
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #aad4ff;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 4px;
+}
+
+/* Description box */
+.description-box {
+  background-color: rgba(204, 228, 247, 0.95);
+  color: #00305a;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 48, 90, 0.3);
+  margin-bottom: 15px;
+  max-height: 180px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+
+/* Scrollable helper */
+.scrollable {
+  overflow-y: auto;
+}
+
+/* Report box */
+.report-box {
+  background-color: rgba(241, 248, 255, 0.95);
+  color: #002755;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 39, 84, 0.25);
+  font-size: 0.9rem;
+}
+
+/* Large report box */
+.large-box {
+  min-height: 250px;
+  max-height: 500px;
+  overflow-y: auto;
+}

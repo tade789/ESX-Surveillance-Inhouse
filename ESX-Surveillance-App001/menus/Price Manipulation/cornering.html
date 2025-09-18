@@ -1,0 +1,28 @@
+<div class="section-title">Cornering</div>
+
+<div class="description-box">
+  <p>
+    📘 <strong>What is Cornering?</strong><br>
+    Cornering is a manipulative act where an investor or group gains control over a large portion of a security's supply or open interest to influence its price or limit market liquidity.
+  </p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li>👉 A single client or group acquires ≥ 5% of total available supply in a security to influence price or control market liquidity</li>
+    <li>👉 Dominating the trading volume of a security in a single day</li>
+  </ul>
+  <p>
+     <strong>Detection:</strong><br>
+    This report flags cases where a single client controls more than a configurable percentage of daily trading volume.
+  </p>
+</div>
+
+
+<div class="filter-box" style="margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.1); border-radius:6px;">
+  <label>High Position Threshold (%): 
+    <input type="number" id="cornering-threshold" value="5" min="1" style="width:80px;">
+  </label>
+  <button id="cornering-apply" style="margin-left:12px;">Apply</button>
+</div>
+
+<div id="cornering-report" class="report-box large-box">
+  <p>Upload data in <em>Home</em> to run this report.</p>
+</div>

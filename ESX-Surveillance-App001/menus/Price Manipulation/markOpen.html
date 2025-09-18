@@ -1,0 +1,33 @@
+<div class="section-title">Mark the Open</div>
+
+<div class="description-box">
+  <p>
+    📘 <strong>What is Mark the Open?</strong><br>
+    A manipulation tactic using early trades at inflated prices to set a misleading opening price.
+  </p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li> 👉 Executed right at market open (e.g., within 5 minutes)</li>
+    <li> 👉 Price &gt; 5% above previous close</li>
+  </ul>
+  <p>
+    Detects potential "Mark the Open" manipulation:
+    early trades executed within <strong>5 minutes after market open</strong>,
+    at prices more than <strong>5% above the previous close</strong>.
+  </p>
+</div>
+
+
+<!-- Filters -->
+<div class="filter-box" style="margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.1); border-radius:6px;">
+  <label>Open Window (minutes): 
+    <input type="number" id="mo-window" value="5" min="1" style="width:80px;">
+  </label>
+  <label style="margin-left:12px;">Price % Threshold:
+    <input type="number" id="mo-threshold" value="5" min="1" style="width:80px;"> %
+  </label>
+  <button id="mo-apply" style="margin-left:12px;">Apply</button>
+</div>
+
+<div id="mark-open-report" class="report-box large-box">
+  <p>Upload data in <em>Home</em> to run this report.</p>
+</div>

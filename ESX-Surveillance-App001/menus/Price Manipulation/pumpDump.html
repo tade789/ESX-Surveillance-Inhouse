@@ -1,0 +1,36 @@
+<div class="section-title">Pump and Dump</div>
+
+<div class="description-box">
+  <p>
+    📘 <strong>What is Pump and Dump?</strong><br>
+    Pump and Dump is a scheme to artificially inflate a stock’s price through misleading trading or statements, followed by selling at elevated prices.
+  </p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li>👉 Alert on 3+ buys followed by 70%+ sell within 10 days</li>
+    <li>👉 Flag 15%+ price spike in 5 days with no news or disclosures</li>
+    <li>👉 Detect 5+ trades between same accounts in 3 days with no net position change</li>
+  </ul>
+  <p>
+     <strong>Detection Patterns:</strong>
+  </p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li>👉 <strong>Buy-Sell Flip</strong>: ≥ 3 buys followed by ≥ 70% sell within 10 days</li>
+    <li>👉 <strong>Price Spike</strong>: ≥ 15% price increase in 5 days with no news/disclosures</li>
+    <li>👉 <strong>Circular Trades</strong>: ≥ 5 trades between same accounts in 3 days with no net position change</li>
+  </ul>
+</div>
+
+
+<div class="filter-box" style="margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.1); border-radius:6px;">
+  <label>Sell % Threshold:
+    <input type="number" id="pd-sell-threshold" value="70" min="10" style="width:80px;"> %
+  </label>
+  <label style="margin-left:12px;">Price Spike %:
+    <input type="number" id="pd-spike-threshold" value="15" min="5" style="width:80px;"> %
+  </label>
+  <button id="pd-apply" style="margin-left:12px;">Apply</button>
+</div>
+
+<div id="pump-dump-report" class="report-box large-box">
+  <p>Upload data in <em>Home</em> to run this report.</p>
+</div>

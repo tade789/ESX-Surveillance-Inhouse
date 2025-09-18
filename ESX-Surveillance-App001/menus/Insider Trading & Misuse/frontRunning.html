@@ -1,0 +1,63 @@
+<div class="section-title">Front Running (Base Heuristic)</div>
+
+<div class="description-box">
+  <p>
+    📘 <strong>What is Front Running?</strong><br>
+    Front Running is an unethical trading practice where a trading member with prior knowledge of a pending client order or large trade uses that information to place their own trade first, profiting from the expected impact on the market price.
+  </p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li>👉 Looks for a proprietary buy before a client buys (and vice versa).</li>
+    <li>👉 Client order significantly larger than the proprietary trade.</li>
+    <li>👉 Executed within 10 minutes.</li>
+  </ul>
+
+  <p>
+     <strong>Heuristic Detection:</strong><br>
+    Detects potential front-running when a <strong>watch account</strong>
+    (Proprietary or Employee) trades shortly <em>before</em> a larger client
+    order on the same security and same side (buy/sell).
+  </p>
+  <ul style="margin-left:18px; padding-left:0;">
+    <li><strong>Time Window</strong>: lookback minutes before client trade.</li>
+    <li><strong>Min Client Qty</strong>: only consider client orders above this size.</li>
+    <li><strong>Min Watch Qty %</strong>: watch trade must be at least this % of the client qty.</li>
+    <li><strong>Price Advantage</strong> (optional): buy ≤ client price, sell ≥ client price.</li>
+  </ul>
+</div>
+
+<!-- Filters -->
+<div class="filter-box" style="margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.1); border-radius:6px;">
+  <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+    <!-- Watch Type dropdown -->
+    <div class="dropdown" style="display:inline-block; margin-right:10px;">
+      <button class="dropbtn">Watch Types ▾</button>
+      <div class="dropdown-content" id="fr-watchtype-dropdown" style="padding:8px;">
+        <label><input type="checkbox" class="fr-watch-filter" value="Proprietary" checked> Proprietary</label><br>
+        <label><input type="checkbox" class="fr-watch-filter" value="Employee" checked> Employee</label>
+      </div>
+    </div>
+
+    <label>Date From: <input type="date" id="fr-date-from"></label>
+    <label>To: <input type="date" id="fr-date-to"></label>
+
+    <label>Time Window (min):
+      <input type="number" id="fr-window" min="1" value="30" style="width:80px;">
+    </label>
+
+    <label>Min Client Qty:
+      <input type="number" id="fr-min-client-qty" min="1" value="1000" style="width:100px;">
+    </label>
+
+    <label>Min Watch Qty %:
+      <input type="number" id="fr-min-watch-pct" min="1" max="100" value="20" style="width:80px;">%
+    </label>
+
+    <label><input type="checkbox" id="fr-price-adv" checked> Require Price Advantage</label>
+
+    <button id="fr-apply" style="margin-left:8px;">Apply</button>
+  </div>
+</div>
+
+<div id="front-running-report" class="report-box large-box">
+  <p>Upload data in <em>Home</em> to run this report.</p>
+</div>

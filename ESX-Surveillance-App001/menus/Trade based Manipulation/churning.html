@@ -1,0 +1,32 @@
+<div class="section-title">Churning</div>
+
+<div class="description-box">
+  <p>
+    📘 <strong>What is Churning?</strong><br>
+    Churning involves excessive buying and selling of securities in a client's account primarily to generate commissions for the broker, not to benefit the client.
+  </p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li>👉 Trade (Turnover) Ratios above 2.0</li>
+    <li>👉 3-to-6-month observation period</li>
+    <li>👉 High volume of repetitive trades with little economic purpose</li>
+  </ul>
+  <p>
+     <strong>Detection:</strong><br>
+    Flags accounts exhibiting frequent buy/sell activity aimed at generating commissions rather than legitimate trading gains.
+  </p>
+</div>
+
+
+<div class="filter-box" style="margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.1); border-radius:6px;">
+  <label>Look-back (months):
+    <input type="number" id="churning-months" value="6" min="1" max="12" style="width:60px;">
+  </label>
+  <label style="margin-left:12px;">Turnover Ratio Threshold:
+    <input type="number" id="churning-threshold" value="2.0" step="0.1" style="width:60px;">
+  </label>
+  <button id="churning-apply" style="margin-left:12px;">Apply</button>
+</div>
+
+<div id="churning-report" class="report-box large-box">
+  <p>Upload data in <em>Home</em> to run this report.</p>
+</div>

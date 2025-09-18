@@ -1,0 +1,42 @@
+<div class="section-title">Insider Trading Report</div>
+
+<div class="description-box">
+  <p>
+    📘 <strong>What is Insider Trading? </strong><br>
+    The act of trading securities based on material, non-public information that gives an unfair advantage over other market participants.
+  </p>
+  <strong>Categories include:</strong> 
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li>🧑‍💼 Executive Management of the issuers</li>
+    <li>🏛️ Members of Board of Directors</li>
+    <li>💼 Major Shareholders (≥ 5%)</li>
+    <li>👨‍💻 Trading Member Staffs – including traders, compliance officers, advisors, and senior management</li>
+    <li>👪 Major familiar relationships among the above stakeholder categories</li>
+  </ul>
+  Consolidated trading activity for <strong>Directors</strong>,
+  <strong>≥5% Shareholders</strong>, and <strong>Board Members</strong>.
+  Use filters below to refine results.
+</div>
+
+<!-- Filters -->
+<div class="filter-box" style="margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.1); border-radius:6px;">
+  <!-- Watch Type dropdown -->
+  <div class="dropdown" style="display:inline-block; margin-right:15px;">
+    <button class="dropbtn">Filter Watch Type ▾</button>
+    <div class="dropdown-content" id="watchtype-dropdown" style="padding:8px;">
+      <label><input type="checkbox" class="watch-filter" value="Director" checked> Director</label><br>
+      <label><input type="checkbox" class="watch-filter" value="≥5% Shareholder" checked> ≥5% Shareholder</label><br>
+      <label><input type="checkbox" class="watch-filter" value="Board Member" checked> Board Member</label><br>
+      <label><input type="checkbox" class="watch-filter" value="Proprietary Account" checked> Proprietary</label>
+    </div>
+  </div>
+
+  <!-- Date filters -->
+  <label>Date From: <input type="date" id="date-from"></label>
+  <label style="margin-left:10px;">Date To: <input type="date" id="date-to"></label>
+  <button id="apply-filters" style="margin-left:12px;">Apply Filters</button>
+</div>
+
+<div id="insider-report" class="report-box large-box">
+  <p>Upload trade data from Home to view insider activity.</p>
+</div>

@@ -1,0 +1,30 @@
+<div class="section-title">Wash Trading</div>
+
+<div class="description-box">
+  <p>
+    📘 <strong>What is Wash Trading?</strong><br>
+    Wash trading is a market manipulation practice where the same party (or colluding parties) simultaneously buys and sells the same financial instrument to create a false appearance of market activity or price movement.
+  </p>
+  <p><b>Key Indicators:</b></p>
+  <ul style="list-style-type:none; margin-left:18px; padding-left:0;">
+    <li>👉 Buy and sell orders in the same security by the same or linked accounts</li>
+    <li>👉 Flag repeated buy and sell orders at same price and volume, with no net position change</li>
+    <li>👉 Opposite sides executed within 1–3 days</li>
+  </ul>
+  <p>
+     <strong>Detection:</strong><br>
+    Occurs when the same beneficial owner is on both sides of a trade, creating a false sense of activity or liquidity with no actual change in ownership.
+  </p>
+</div>
+
+
+<div class="filter-box" style="margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.1); border-radius:6px;">
+  <label>Window (days):
+    <input type="number" id="wash-window" value="3" min="1" max="10" style="width:60px;">
+  </label>
+  <button id="wash-apply" style="margin-left:12px;">Apply</button>
+</div>
+
+<div id="wash-trading-report" class="report-box large-box">
+  <p>Upload data in <em>Home</em> to run this report.</p>
+</div>
